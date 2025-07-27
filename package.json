@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "npx tsc --noEmit",
-    "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out -t true"
+    "typecheck": "npx tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
