@@ -1,25 +1,63 @@
+"use client";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Briefcase, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Briefcase, Github, Linkedin, Code2, Brain, MonitorPlay, Network, Pyramid, Bot, BarChartBig, Settings } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import React from "react";
+
+const skillsIcons = [
+  { icon: <Code2 size={48} />, name: 'Python' },
+  { icon: <Brain size={48} />, name: 'AI & ML' },
+  { icon: <MonitorPlay size={48} />, name: 'Web Automation' },
+  { icon: <Network size={48} />, name: 'n8n' },
+  { icon: <Pyramid size={48} />, name: 'SAP' },
+  { icon: <Bot size={48} />, name: 'RPA' },
+  { icon: <BarChartBig size={48} />, name: 'Pandas' },
+  { icon: <Settings size={48} />, name: 'Pywinauto' },
+  { icon: <Code2 size={48} />, name: 'Python' }, // Duplicate for seamless loop
+  { icon: <Brain size={48} />, name: 'AI & ML' }, // Duplicate for seamless loop
+  { icon: <MonitorPlay size={48} />, name: 'Web Automation' }, // Duplicate for seamless loop
+  { icon: <Network size={48} />, name: 'n8n' }, // Duplicate for seamless loop
+];
+
+const SkillBanner = () => {
+  return (
+    <div className="relative h-48 md:h-64 lg:h-80 w-full rounded-xl overflow-hidden shadow-lg animate-fade-in-up mt-12 bg-primary/5 dark:bg-primary/10 border border-primary/10">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-full max-w-full h-full flex items-center overflow-hidden">
+          <div className="absolute left-0 flex items-center animate-scroll-x" style={{ animationDuration: '40s' }}>
+            {skillsIcons.map((skill, index) => (
+              <div key={index} className="flex-shrink-0 w-40 h-40 mx-4 flex items-center justify-center bg-background/70 dark:bg-card/70 rounded-2xl shadow-md backdrop-blur-sm border border-border/20">
+                <div className="text-center text-primary space-y-2">
+                   {React.cloneElement(skill.icon, { className: 'mx-auto' })}
+                   <p className="text-sm font-medium text-foreground">{skill.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+           <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-background to-transparent z-10"></div>
+           <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-background to-transparent z-10"></div>
+        </div>
+      </div>
+      <style jsx>{`
+        @keyframes scroll-x {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll-x {
+          animation: scroll-x linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+};
+
 
 export function HeroSection() {
   return (
     <section id="hero" className="bg-background text-foreground relative">
       <div className="container mx-auto px-4 md:px-6">
-        {/* Banner Image */}
-        <div className="relative h-48 md:h-64 lg:h-80 w-full rounded-xl overflow-hidden shadow-lg animate-fade-in-up mt-12">
-           <Image
-            src="https://placehold.co/1200x400.png"
-            alt="Syed Vahith - Professional Banner"
-            layout="fill"
-            objectFit="cover"
-            className="bg-primary/10"
-            data-ai-hint="abstract technology banner"
-            priority
-          />
-           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-        </div>
+        
+        <SkillBanner />
 
         <div className="relative px-4">
           {/* Content */}

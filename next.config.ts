@@ -3,7 +3,8 @@ import type {NextConfig} from 'next';
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Apply 'export' only when building for GitHub Pages
+  ...(isGithubActions ? { output: 'export' } : {}),
   assetPrefix: isGithubActions ? '/Syed_vahit_Portfolio/' : undefined,
   images: {
     unoptimized: true,
