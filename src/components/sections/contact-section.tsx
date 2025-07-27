@@ -23,13 +23,13 @@ export function ContactSection() {
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="h-6 w-6 text-primary" />
-                <a href="mailto:syedvahith@example.com" className="text-foreground hover:text-primary transition-colors">
-                  syed.vahith.dev@gmail.com {/* Replace with actual email */}
+                <a href="mailto:syedvahith21@gmail.com" className="text-foreground hover:text-primary transition-colors">
+                  syedvahith21@gmail.com {/* Replace with actual email */}
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-6 w-6 text-primary" />
-                <span className="text-foreground">+91 XXXXX XXXXX</span> {/* Replace with actual phone or remove */}
+                <span className="text-foreground">+91 84895 68126</span> {/* Replace with actual phone or remove */}
               </div>
               <div className="flex items-center space-x-3">
                 <Linkedin className="h-6 w-6 text-primary" />
@@ -57,7 +57,7 @@ export function ContactSection() {
                   Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you. My expertise in Python, automation, and AI can bring significant value to your initiatives.
                 </p>
                 <Button size="lg" asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  <a href="mailto:syed.vahith.dev@example.com"> {/* Replace with actual email */}
+                  <a href="mailto:syedvahith21@gmail.com"> {/* Replace with actual email */}
                     <Mail className="mr-2 h-5 w-5" /> Send an Email
                   </a>
                 </Button>

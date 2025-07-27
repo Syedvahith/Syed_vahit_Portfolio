@@ -126,6 +126,6 @@ export const projectsData: Project[] = [
 export const professionalSummary = {
   name: "Syed Vahith",
   title: "Python Automation & AI Engineer",
-  experienceYears: 1.4,
+  experienceYears: 1.5,
   skills: ["Python", "Selenium", "Flask", "Ollama", "Pandas", "UiPath", "Pywinauto", "React", "Mistral", "LLaMA3"]
 };

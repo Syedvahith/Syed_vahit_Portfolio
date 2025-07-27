@@ -31,7 +31,7 @@ export function AboutSection() {
               Python Automation & AI Engineer
             </h3>
             <p className="text-lg text-foreground leading-relaxed">
-              With 1.4 years of dedicated experience, I specialize in crafting intelligent automation solutions and integrating AI to enhance efficiency and drive innovation. My work primarily involves Python, where I leverage its powerful ecosystem to build robust applications and streamline complex workflows.
+              With 1.5 years of dedicated experience, I specialize in crafting intelligent automation solutions and integrating AI to enhance efficiency and drive innovation. My work primarily involves Python, where I leverage its powerful ecosystem to build robust applications and streamline complex workflows.
             </p>
             <p className="text-lg text-foreground leading-relaxed">
               I am deeply passionate about the intersection of software engineering and artificial intelligence, constantly exploring new tools and techniques to solve real-world problems. My focus is on delivering results-driven outcomes, whether it's through developing sophisticated data processing pipelines, automating intricate UI interactions, or deploying cutting-edge language models.
@@ -44,7 +44,7 @@ export function AboutSection() {
                   <Briefcase className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">1.4 Years</div>
+                  <div className="text-2xl font-bold">1.5 Years</div>
                   <p className="text-xs text-muted-foreground">
                     in Automation & AI
                   </p>
