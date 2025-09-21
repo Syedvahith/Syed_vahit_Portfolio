@@ -3,27 +3,31 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Award, FileText, BookOpenCheck } from "lucide-react";
 
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'Syed_vahit_Portfolio';
+const assetPrefix = isProd ? `/${repoName}` : '';
+
 const awards = [
   {
     title: "HEPL Spot Award – Splendid Performer",
     issuer: "Hemas Enterprise Pvt Ltd",
     date: "Aug 2025",
     icon: <Award className="h-8 w-8 text-primary" />,
-    image: "/Sport_award.jpeg",
+    image: `${assetPrefix}/Sport_award.jpeg`,
     description: "Recognized as a 'Splendid Performer On Time' for outstanding contributions and timely project delivery.",
   },
   {
     title: "Ethical Hacking Through Programming",
     issuer: "SNA Academy",
     icon: <BookOpenCheck className="h-8 w-8 text-primary" />,
-    image: "/Hack_certificate.png",
+    image: `${assetPrefix}/Hack_certificate.png`,
     description: "Certified in foundational and advanced techniques for ethical hacking using programming.",
   },
   {
     title: "Research Publication: IJSART",
     issuer: "Paper ID: IJSARTV9I360245",
     icon: <FileText className="h-8 w-8 text-primary" />,
-    image: "/Paper_published_certificate.jpeg",
+    image: `${assetPrefix}/Paper_published_certificate.jpeg`,
     description: "Published research contributing to the academic body of knowledge in the field.",
     link: "https://ijsart.com/an-fully-automated-ai-based-trading-system-60245"
   },

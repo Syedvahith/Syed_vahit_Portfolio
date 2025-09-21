@@ -1,13 +1,11 @@
 import type {NextConfig} from 'next';
 
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
-const repoName = '/Syed_vahit_Portfolio'
+const repoName = 'Syed_vahit_Portfolio'
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // basePath should not be used with assetPrefix for GitHub Pages deployment like this.
-  // The assetPrefix is sufficient for linking assets correctly.
-  assetPrefix: isGithubActions ? repoName : "",
+  assetPrefix: isGithubActions ? `/${repoName}/` : "",
   typescript: {
     ignoreBuildErrors: true,
   },

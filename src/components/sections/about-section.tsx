@@ -10,6 +10,10 @@ function calculateExperience(startDate: Date): string {
   return years.toFixed(1);
 }
 
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'Syed_vahit_Portfolio';
+const assetPrefix = isProd ? `/${repoName}` : '';
+
 export function AboutSection() {
   const experienceStartDate = new Date('2023-01-01');
   const experienceYears = calculateExperience(experienceStartDate);
@@ -24,7 +28,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="relative group animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <Image
-              src="/About.png"
+              src={`${assetPrefix}/About.png`}
               alt="Syed Vahith working on a project"
               width={600}
               height={400}
