@@ -16,7 +16,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="relative group animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <Image
-              src="https://placehold.co/600x400.png"
+              src="/About.png"
               alt="Syed Vahith working on a project"
               width={600}
               height={400}

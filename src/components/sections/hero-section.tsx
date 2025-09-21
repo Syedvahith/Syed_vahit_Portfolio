@@ -63,7 +63,7 @@ export function HeroSection() {
           {/* Content */}
           <div className="pt-12 pb-16 md:pb-24 text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
              <p className="text-lg md:text-xl text-primary mb-2 font-medium">
-              Freelance Python Automation & AI Engineer
+              Python Automation & AI Engineer
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold mb-4 tracking-tight">
               Syed Vahith
