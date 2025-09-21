@@ -5,7 +5,7 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
 const nextConfig: NextConfig = {
   // Apply 'export' only when building for GitHub Pages
   ...(isGithubActions ? { output: 'export' } : {}),
-  assetPrefix: isGithubActions ? '/Syed_vahith_Portfolio/' : undefined,
+  assetPrefix: isGithubActions ? '/Syed_vahit_Portfolio/' : undefined,
   typescript: {
     ignoreBuildErrors: true,
   },
