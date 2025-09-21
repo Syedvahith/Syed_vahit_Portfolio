@@ -1,16 +1,24 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Briefcase, Zap, Lightbulb } from "lucide-react";
+import { Briefcase, Zap } from "lucide-react";
+
+function calculateExperience(startDate: Date): string {
+  // Set to a fixed date to ensure consistent output for this interaction.
+  const fixedToday = new Date('2024-08-20');
+  const diffInMonths = (fixedToday.getFullYear() - startDate.getFullYear()) * 12 + (fixedToday.getMonth() - startDate.getMonth());
+  const years = diffInMonths / 12;
+  return years.toFixed(1);
+}
 
 export function AboutSection() {
+  const experienceStartDate = new Date('2023-01-01');
+  const experienceYears = calculateExperience(experienceStartDate);
+
   return (
     <section id="about" className="py-16 md:py-24 bg-secondary/30 dark:bg-secondary/10">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">About Me</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A glimpse into my professional journey and passions.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -23,18 +31,18 @@ export function AboutSection() {
               className="rounded-xl shadow-2xl object-cover aspect-video transition-transform duration-500 group-hover:scale-105"
               data-ai-hint="developer coding"
             />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-xl"></div>
           </div>
           
           <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <h3 className="text-2xl md:text-3xl font-headline font-semibold text-primary">
-              Python Automation & AI Engineer
+              AI & Automation Engineer
             </h3>
             <p className="text-lg text-foreground leading-relaxed">
-              With 1.5 years of dedicated experience, I specialize in crafting intelligent automation solutions and integrating AI to enhance efficiency and drive innovation. My work primarily involves Python, where I leverage its powerful ecosystem to build robust applications and streamline complex workflows.
+               AI Automation Engineer with {experienceYears}+ years of experience in Python, RPA, SAP automation, e-commerce web scraping, and AI integration. I specialize in mechanizing workflows and competitor analysis, reducing manual effort by 85% and achieving 80% operational cost savings.
             </p>
             <p className="text-lg text-foreground leading-relaxed">
-              I am deeply passionate about the intersection of software engineering and artificial intelligence, constantly exploring new tools and techniques to solve real-world problems. My focus is on delivering results-driven outcomes, whether it's through developing sophisticated data processing pipelines, automating intricate UI interactions, or deploying cutting-edge language models.
+              Skilled in LLM integration, web/data scraping, and building AI-driven intelligent systems. I am passionate about delivering measurable business impact through computerized and systematized automation.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
@@ -44,7 +52,7 @@ export function AboutSection() {
                   <Briefcase className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">1.5 Years</div>
+                  <div className="text-2xl font-bold">{experienceYears}+ Years</div>
                   <p className="text-xs text-muted-foreground">
                     in Automation & AI
                   </p>
@@ -56,9 +64,9 @@ export function AboutSection() {
                   <Zap className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">Efficiency</div>
+                  <div className="text-2xl font-bold">Business Impact</div>
                   <p className="text-xs text-muted-foreground">
-                    through intelligent solutions
+                    through intelligent automation
                   </p>
                 </CardContent>
               </Card>

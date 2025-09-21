@@ -1,10 +1,8 @@
 import React from 'react';
-import type { LucideIcon } from "lucide-react";
-import { Code2, Bot, Network, Settings, Brain, BarChartBig, MonitorPlay, Pyramid } from "lucide-react";
+import { LucideIcon, Code2, Bot, Network, Settings, Brain, BarChartBig, MonitorPlay, Pyramid, Database, GitBranch, LayoutTemplate, PenTool, Server, FileJson, DraftingCompass, Wind, Workflow, Cpu, Rocket, TestTube2, Palette, ShieldCheck, ProjectorScreen, Users } from "lucide-react";
 
 // --- FREELANCER PLATFORM ICONS ---
 
-// Using a simple path for the Fiverr 'F'
 const FiverrIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +14,6 @@ const FiverrIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-// A generic 'U' shape for Upwork
 const UpworkIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +30,6 @@ const UpworkIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-
 // --- TYPE DEFINITIONS ---
 
 export interface FreelancePlatform {
@@ -44,10 +40,10 @@ export interface FreelancePlatform {
 }
 
 export interface Skill {
-  name: string;
+  name:string;
   icon?: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
-  level?: number;
   description?: string;
+  category: string;
 }
 
 export interface Project {
@@ -65,67 +61,67 @@ export interface Project {
 export const freelancePlatforms: FreelancePlatform[] = [
   {
     name: "Fiverr",
-    url: "https://www.fiverr.com/syedvahith", // Replace with your actual Fiverr URL
+    url: "https://www.fiverr.com/syedvahith",
     icon: FiverrIcon,
     description: "Offering specialized gigs for Python automation, web scraping, and AI integration tasks.",
   },
   {
     name: "Upwork",
-    url: "https://www.upwork.com/freelancers/~01abcdef1234567890", // Replace with your actual Upwork URL
+    url: "https://www.upwork.com/freelancers/~01e912b7a9de557452",
     icon: UpworkIcon,
     description: "Available for hourly or fixed-price projects, delivering robust and scalable solutions.",
   },
 ];
 
 export const skillsData: Skill[] = [
-  { name: "Python", icon: Code2, level: 90, description: "Core language for automation and back-end services." },
-  { name: "AI & ML", icon: Brain, level: 80, description: "Integrating LLMs (Mistral, LLaMA) via APIs & Ollama." },
-  { name: "Web Automation", icon: MonitorPlay, level: 85, description: "Browser automation with Selenium for testing & scraping." },
-  { name: "n8n Workflows", icon: Network, level: 80, description: "Creating complex, multi-system automated workflows." },
-  { name: "SAP Automation", icon: Pyramid, level: 75, description: "Automating enterprise processes within SAP environments." },
-  { name: "RPA", icon: Bot, level: 70, description: "Process automation using tools like UiPath." },
-  { name: "Data Processing", icon: BarChartBig, level: 85, description: "Data manipulation and analysis with Pandas." },
-  { name: "GUI Automation", icon: Settings, level: 70, description: "Automating desktop workflows with Pywinauto." },
+    { name: "Python, SQL", icon: Code2, description: "Core programming and database languages.", category: "Languages" },
+    { name: "Flask, Django, FastAPI", icon: Server, description: "Building robust backend APIs and web services.", category: "Frameworks/Libraries" },
+    { name: "Pandas, Matplotlib", icon: BarChartBig, description: "Data analysis, manipulation, and visualization.", category: "Frameworks/Libraries" },
+    { name: "Selenium, Pywinauto", icon: MonitorPlay, description: "Web and desktop GUI automation.", category: "Frameworks/Libraries" },
+    { name: "LLMs (Mistral, LLaMA3)", icon: Brain, description: "Integrating large language models via Ollama.", category: "AI/ML" },
+    { name: "Hugging Face, NLP", icon: Cpu, description: "Leveraging pre-trained models for NLP tasks.", category: "AI/ML" },
+    { name: "UiPath, RPA", icon: Bot, description: "Enterprise-grade Robotic Process Automation.", category: "Automation/RPA" },
+    { name: "n8n, Prefect", icon: Workflow, description: "Orchestrating complex data and automation workflows.", category: "Automation/RPA" },
+    { name: "SAP GUI Scripting", icon: Pyramid, description: "Automating tasks within SAP environments.", category: "Automation/RPA" },
+    { name: "React.js", icon: LayoutTemplate, description: "Building modern UIs and interacting with databases.", category: "Web/Databases" },
+    { name: "MySQL, SQLite, Firebase", icon: Database, description: "Database management and integration.", category: "Web/Databases" },
+    { name: "Git, GitHub", icon: GitBranch, description: "Version control for collaborative development.", category: "Tools" },
+    { name: "Figma, Penpot, VS Code", icon: Palette, description: "Tools for design, prototyping, and development.", category: "Tools" },
+    { name: "Docker", icon: FileJson, description: "Containerization for consistent deployment.", category: "Tools" },
+    { name: "Agile, Project Management", icon: ProjectorScreen, description: "Methodologies for efficient project delivery.", category: "Professional" },
+    { name: "Mentorship", icon: Users, description: "Guiding junior developers in automation and AI.", category: "Professional" },
 ];
+
 
 export const projectsData: Project[] = [
   {
-    title: "SmartFile AI",
-    description: "An intelligent file management system leveraging Flask for the backend, Selenium for web automation tasks, and Ollama for local AI model integration to categorize and process files.",
-    technologies: ["Flask", "Selenium", "Ollama", "Python"],
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "file management",
+    title: "SmartFile AI – AI-Powered File Summarization",
+    description: "Mechanized CSV ingestion, reducing data collection by 90%. Integrated LLMs (Mistral via Ollama) for real-time structured/unstructured data summarization. Generated charts with Matplotlib and interactive dashboard for reporting.",
+    technologies: ["Python", "Flask", "Ollama", "Pandas", "Selenium"],
+    imageUrl: "https://picsum.photos/seed/ai-files/600/400",
+    imageHint: "AI dashboard data",
     githubLink: "https://github.com/syedvahith/smartfile-ai",
   },
   {
-    title: "Automated Data Processing Pipeline",
-    description: "Developed a robust pipeline using Pandas for complex data manipulation and transformation, integrated with UiPath for end-to-end Robotic Process Automation, significantly streamlining data workflows.",
-    technologies: ["Pandas", "UiPath", "Python", "RPA"],
-    imageUrl: "https://placehold.co/600x401.png",
-    imageHint: "data pipeline",
+    title: "E-commerce Web Scraping Automation",
+    description: "Systematized scraping of product, pricing, discount, and inventory data from multiple Indian e-commerce platforms. Enhanced data pipelines to clean, normalize, and analyze datasets for rapid pricing strategy decisions. Computerized report generation and alerts, reducing manual monitoring by 90%.",
+    technologies: ["Python", "Selenium", "Playwright", "Pandas"],
+    imageUrl: "https://picsum.photos/seed/web-scraping/600/400",
+    imageHint: "data pipeline code",
     githubLink: "https://github.com/syedvahith/data-pipeline",
   },
   {
-    title: "Desktop Application Automation",
-    description: "Leveraged Pywinauto to automate interactions with legacy desktop applications, creating scripts to improve efficiency, reduce manual error, and integrate them into larger automated systems.",
-    technologies: ["Pywinauto", "Python", "Desktop Automation"],
-    imageUrl: "https://placehold.co/601x400.png",
-    imageHint: "desktop automation",
+    title: "Business Process Automation Suite",
+    description: "Mechanized end-to-end workflows, eliminating 15+ hours of manual work weekly. Enhanced in-house scripts replacing licensed software, cutting expenses by 75%.",
+    technologies: ["Python", "Selenium", "Pywinauto"],
+    imageUrl: "https://picsum.photos/seed/process-automation/600/400",
+    imageHint: "business process diagram",
     githubLink: "https://github.com/syedvahith/desktop-automation",
-  },
-  {
-    title: "AI-Powered Content Summarizer",
-    description: "Built a content summarization tool using Mistral and LLaMA3 models, integrated via a React frontend and Flask API, to provide concise summaries of long texts.",
-    technologies: ["React", "Flask", "Mistral", "LLaMA3"],
-    imageUrl: "https://placehold.co/601x401.png",
-    imageHint: "text summarization",
-    githubLink: "https://github.com/syedvahith/content-summarizer",
   },
 ];
 
 export const professionalSummary = {
   name: "Syed Vahith",
   title: "Python Automation & AI Engineer",
-  experienceYears: 1.5,
-  skills: ["Python", "Selenium", "Flask", "Ollama", "Pandas", "UiPath", "Pywinauto", "React", "Mistral", "LLaMA3"]
+  skills: ["Python", "Selenium", "Flask", "Ollama", "Pandas", "UiPath", "Pywinauto", "React", "Mistral", "LLaMA3", "n8n"]
 };
