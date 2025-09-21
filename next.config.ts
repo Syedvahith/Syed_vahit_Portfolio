@@ -4,10 +4,10 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
 const repoName = '/Syed_vahit_Portfolio'
 
 const nextConfig: NextConfig = {
-  // Apply 'export' only when building for GitHub Pages
-  ...(isGithubActions ? { output: 'export' } : {}),
-  basePath: isGithubActions ? repoName : undefined,
-  assetPrefix: isGithubActions ? repoName : undefined,
+  output: 'export',
+  // basePath should not be used with assetPrefix for GitHub Pages deployment like this.
+  // The assetPrefix is sufficient for linking assets correctly.
+  assetPrefix: isGithubActions ? repoName : "",
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true, // Required for static export with next/image
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
