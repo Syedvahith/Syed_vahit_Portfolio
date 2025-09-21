@@ -3,6 +3,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import Link from "next/link";
 
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'Syed_vahit_Portfolio';
+const assetPrefix = isProd ? `/${repoName}` : '';
+
 export function ContactSection() {
   return (
     <section id="contact" className="py-16 md:py-24 bg-background">
@@ -74,7 +78,7 @@ export function ContactSection() {
                   For a detailed overview of my skills and experience, download my resume.
                 </p>
                 <Button variant="outline" size="lg" asChild className="w-full text-foreground border-primary hover:bg-primary/10 hover:text-primary">
-                  <a href="/resume.pdf" download="Syed_Vahith_Resume.pdf">
+                  <a href={`${assetPrefix}/resume.pdf`} download="Syed_Vahith_Resume.pdf">
                     <Download className="mr-2 h-5 w-5" /> Download PDF
                   </a>
                 </Button>
