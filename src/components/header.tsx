@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Briefcase, Code, MessageSquare, UserCircle, Download, ExternalLink } from "lucide-react"
+import { Menu, Briefcase, Code, MessageSquare, UserCircle, Download, ExternalLink, Award } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 const navItems = [
@@ -11,6 +11,7 @@ const navItems = [
   { href: "#freelance", label: "Hire Me", icon: <ExternalLink className="h-5 w-5" /> },
   { href: "#skills", label: "Skills", icon: <Code className="h-5 w-5" /> },
   { href: "#projects", label: "Projects", icon: <Briefcase className="h-5 w-5" /> },
+  { href: "#awards", label: "Awards", icon: <Award className="h-5 w-5" /> },
   { href: "#contact", label: "Contact", icon: <MessageSquare className="h-5 w-5" /> },
 ];
 
