@@ -1,11 +1,13 @@
 import type {NextConfig} from 'next';
 
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
+const repoName = '/Syed_vahit_Portfolio'
 
 const nextConfig: NextConfig = {
   // Apply 'export' only when building for GitHub Pages
   ...(isGithubActions ? { output: 'export' } : {}),
-  assetPrefix: isGithubActions ? '/Syed_vahit_Portfolio/' : undefined,
+  basePath: isGithubActions ? repoName : undefined,
+  assetPrefix: isGithubActions ? repoName : undefined,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -13,6 +15,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true, // Required for static export with next/image
     remotePatterns: [
       {
         protocol: 'https',
