@@ -15,6 +15,10 @@ const navItems = [
   { href: "#contact", label: "Contact", icon: <MessageSquare className="h-5 w-5" /> },
 ];
 
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'Syed_vahit_Portfolio';
+const assetPrefix = isProd ? `/${repoName}` : '';
+
 export function Header() {
   const isMobile = useIsMobile();
 
@@ -53,7 +57,7 @@ export function Header() {
               </Button>
             ))}
              <Button variant="default" asChild className="w-full text-lg py-3 bg-primary hover:bg-primary/90 text-primary-foreground mt-4">
-              <a href="/resume.pdf" download="Syed_Vahith_Resume.pdf" className="flex items-center justify-center space-x-3">
+              <a href={`${assetPrefix}/resume.pdf`} download="Syed_Vahith_Resume.pdf" className="flex items-center justify-center space-x-3">
                 <Download className="h-5 w-5" />
                 <span>Download Resume</span>
               </a>

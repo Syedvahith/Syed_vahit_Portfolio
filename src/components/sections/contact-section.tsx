@@ -3,6 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import Link from "next/link";
 
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'Syed_vahit_Portfolio';
+const assetPrefix = isProd ? `/${repoName}` : '';
+
+
 export function ContactSection() {
   return (
     <section id="contact" className="py-16 md:py-24 bg-background">
@@ -24,12 +29,14 @@ export function ContactSection() {
               <div className="flex items-center space-x-3">
                 <Mail className="h-6 w-6 text-primary" />
                 <a href="mailto:syedvahith21@gmail.com" className="text-foreground hover:text-primary transition-colors">
-                  syedvahith21@gmail.com {/* Replace with actual email */}
+                  syedvahith21@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-6 w-6 text-primary" />
-                <span className="text-foreground">+91 84895 68126</span> {/* Replace with actual phone or remove */}
+                <a href="tel:+918489568126" className="text-foreground hover:text-primary transition-colors">
+                  +91 84895 68126
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Linkedin className="h-6 w-6 text-primary" />
@@ -57,7 +64,7 @@ export function ContactSection() {
                   Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you. My expertise in Python, automation, and AI can bring significant value to your initiatives.
                 </p>
                 <Button size="lg" asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  <a href="mailto:syedvahith21@gmail.com"> {/* Replace with actual email */}
+                  <a href="mailto:syedvahith21@gmail.com">
                     <Mail className="mr-2 h-5 w-5" /> Send an Email
                   </a>
                 </Button>
@@ -72,7 +79,7 @@ export function ContactSection() {
                   For a detailed overview of my skills and experience, download my resume.
                 </p>
                 <Button variant="outline" size="lg" asChild className="w-full text-foreground border-primary hover:bg-primary/10 hover:text-primary">
-                  <a href="/resume.pdf" download="Syed_Vahith_Resume.pdf">
+                  <a href={`${assetPrefix}/resume.pdf`} download="Syed_Vahith_Resume.pdf">
                     <Download className="mr-2 h-5 w-5" /> Download PDF
                   </a>
                 </Button>
